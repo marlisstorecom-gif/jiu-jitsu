@@ -1,0 +1,6 @@
+{
+  "name": "Dinâmicas de Jiu-Jitsu",
+  "description": "Página de vendas profissional para mais de 500 dinâmicas e jogos de Jiu-Jitsu infantil.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
