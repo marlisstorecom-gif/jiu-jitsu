@@ -86,9 +86,19 @@ export default function App() {
           </h1>
 
           {/* Subtitle */}
-          <p className="text-slate-600 text-base md:text-lg max-w-2xl mx-auto leading-relaxed mb-10 font-medium">
+          <p className="text-slate-600 text-base md:text-lg max-w-2xl mx-auto leading-relaxed mb-6 font-medium">
             Aumente o engajamento das crianças de 3 a 14 anos, torne-se uma referência em didática lúdica e elimine de vez a dispersão no tatame com jogos e metodologias validadas.
           </p>
+
+          {/* Hero Mockup Image */}
+          <div className="mb-10 flex justify-center px-4">
+            <img 
+              src="https://res.cloudinary.com/dm2glkkcv/image/upload/v1786159470/823c9bd3-9034-4bda-a5d3-ddb19fd9d502_dlbwea.png" 
+              alt="Mockup do Acervo de Jiu-Jitsu Infantil"
+              className="w-full max-w-lg md:max-w-2xl h-auto object-contain drop-shadow-2xl hover:scale-[1.02] transition-transform duration-500"
+              referrerPolicy="no-referrer"
+            />
+          </div>
 
           {/* Main CTA Button */}
           <div className="flex flex-col items-center justify-center space-y-4">
