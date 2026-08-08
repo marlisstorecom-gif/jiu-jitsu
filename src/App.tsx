@@ -66,7 +66,7 @@ export default function App() {
 
 
       {/* 2. HERO SECTION */}
-      <section className="relative bg-gradient-to-b from-sky-50 via-white to-[#f8fafc] pt-6 md:pt-10 pb-20 px-4 overflow-hidden border-b border-slate-100">
+      <section className="relative bg-gradient-to-b from-sky-50 via-white to-[#f8fafc] pt-6 md:pt-10 pb-12 px-4 overflow-hidden border-b border-slate-100">
         {/* Glowing background accents */}
         <div className="absolute top-1/4 left-10 w-72 h-72 bg-sky-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 -z-10 animate-blob"></div>
         <div className="absolute top-1/3 right-10 w-72 h-72 bg-orange-100 rounded-full mix-blend-multiply filter blur-3xl opacity-40 -z-10 animate-blob animation-delay-2000"></div>
@@ -111,8 +111,8 @@ export default function App() {
       </section>
 
       {/* 3. "O QUE VOCÊ VAI RECEBER?" SECTION */}
-      <section id="features" className="py-20 px-4 max-w-6xl mx-auto">
-        <div className="text-center max-w-3xl mx-auto mb-14">
+      <section id="features" className="py-12 px-4 max-w-6xl mx-auto">
+        <div className="text-center max-w-3xl mx-auto mb-8">
           <span className="text-xs font-black text-orange-500 tracking-wider uppercase block mb-2">CONTEÚDO COMPLETO</span>
           <h2 className="text-3xl md:text-4xl font-black text-slate-900 tracking-tight uppercase">
             O Que Você Vai Receber no Seu Acesso?
@@ -140,9 +140,9 @@ export default function App() {
       </section>
 
       {/* 4. "PARA QUEM É?" SECTION */}
-      <section id="benefits" className="bg-sky-50/50 py-20 px-4 border-y border-sky-100/60">
+      <section id="benefits" className="bg-sky-50/50 py-12 px-4 border-y border-sky-100/60">
         <div className="max-w-5xl mx-auto">
-          <div className="text-center max-w-2xl mx-auto mb-14">
+          <div className="text-center max-w-2xl mx-auto mb-8">
             <span className="bg-sky-100 border border-sky-200/80 text-sky-700 text-xs font-black px-4 py-1.5 rounded-full tracking-wider uppercase inline-block mb-3 shadow-sm">
               PARA QUEM É?
             </span>
@@ -170,13 +170,30 @@ export default function App() {
         </div>
       </section>
 
+      {/* 7. SOCIAL PROOF SECTION */}
+      <section id="testimonials" className="bg-sky-50/50 py-12 px-4 border-y border-sky-100/60">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center max-w-2xl mx-auto mb-8">
+            <span className="text-xs font-black text-orange-500 tracking-wider uppercase block mb-2">RESULTADOS REAIS</span>
+            <h2 className="text-3xl md:text-4xl font-black text-slate-900 tracking-tight uppercase">
+              O Que Nossos Mestres Estão Falando
+            </h2>
+            <p className="text-slate-600 text-sm mt-3 font-medium">
+              Veja conversas reais de professores, senseis e educadores que já aplicam nossas dinâmicas e revolucionaram suas aulas no tatame.
+            </p>
+          </div>
+
+          <WhatsAppMockup />
+        </div>
+      </section>
+
       {/* 5. BONUS SECTION */}
-      <section className="bg-gradient-to-b from-[#f8fafc] via-sky-50/30 to-[#f8fafc] py-24 px-4 relative overflow-hidden border-b border-slate-100">
+      <section className="bg-gradient-to-b from-[#f8fafc] via-sky-50/30 to-[#f8fafc] py-12 px-4 relative overflow-hidden border-b border-slate-100">
         {/* Glow Effects */}
         <div className="absolute top-1/4 right-0 w-80 h-80 bg-orange-400 rounded-full mix-blend-multiply filter blur-[120px] opacity-10"></div>
         <div className="absolute bottom-1/4 left-0 w-80 h-80 bg-sky-400 rounded-full mix-blend-multiply filter blur-[120px] opacity-10"></div>
 
-        <div className="max-w-4xl mx-auto text-center relative z-10 mb-10">
+        <div className="max-w-4xl mx-auto text-center relative z-10 mb-6">
           <span className="bg-orange-100 border border-orange-200/80 text-orange-600 text-[10px] font-black px-4 py-1.5 rounded-full uppercase tracking-wider mb-4 inline-block">
             🎁 BÔNUS EXCLUSIVOS
           </span>
@@ -191,7 +208,7 @@ export default function App() {
 
         <BonusCard />
 
-        <div className="text-center mt-12 relative z-10">
+        <div className="text-center mt-6 relative z-10">
           <p className="text-xs text-slate-400 max-w-md mx-auto italic font-medium">
             *Estes bônus de alto valor serão vinculados automaticamente ao seu painel assim que concluir a compra hoje.
           </p>
@@ -199,8 +216,8 @@ export default function App() {
       </section>
 
       {/* 6. URGENCY & PRICING SECTION */}
-      <section ref={pricingRef} id="pricing" className="py-24 px-4 max-w-6xl mx-auto scroll-mt-6">
-        <div className="text-center max-w-2xl mx-auto mb-10">
+      <section ref={pricingRef} id="pricing" className="py-12 px-4 max-w-6xl mx-auto scroll-mt-6">
+        <div className="text-center max-w-2xl mx-auto mb-8">
           <span className="text-xs font-black text-sky-600 tracking-wider uppercase block mb-2">APROVEITE A PROMOÇÃO</span>
           <h2 className="text-3xl md:text-4xl font-black text-slate-900 tracking-tight uppercase">
             Invista na Qualidade das Suas Aulas
@@ -329,26 +346,9 @@ export default function App() {
         </div>
       </section>
 
-      {/* 7. SOCIAL PROOF SECTION */}
-      <section id="testimonials" className="bg-sky-50/50 py-24 px-4 border-y border-sky-100/60">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center max-w-2xl mx-auto mb-14">
-            <span className="text-xs font-black text-orange-500 tracking-wider uppercase block mb-2">RESULTADOS REAIS</span>
-            <h2 className="text-3xl md:text-4xl font-black text-slate-900 tracking-tight uppercase">
-              O Que Nossos Mestres Estão Falando
-            </h2>
-            <p className="text-slate-600 text-sm mt-3 font-medium">
-              Veja conversas reais de professores, senseis e educadores que já aplicam nossas dinâmicas e revolucionaram suas aulas no tatame.
-            </p>
-          </div>
-
-          <WhatsAppMockup />
-        </div>
-      </section>
-
       {/* 8. WARRANTY SECTION */}
-      <section className="py-24 px-4 max-w-4xl mx-auto">
-        <div className="bg-white border-2 border-slate-100 rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center space-y-8 md:space-y-0 md:space-x-10 shadow-sm">
+      <section className="py-12 px-4 max-w-4xl mx-auto">
+        <div className="bg-white border-2 border-slate-100 rounded-3xl p-6 md:p-8 flex flex-col md:flex-row items-center space-y-6 md:space-y-0 md:space-x-10 shadow-sm">
           {/* Circular Stamp Visual in CSS */}
           <div className="shrink-0 relative w-32 h-32 md:w-40 md:h-40 rounded-full bg-orange-50 border-4 border-dashed border-orange-400/60 flex flex-col items-center justify-center p-3 text-center shadow-inner">
             <div className="absolute inset-2 rounded-full border-2 border-orange-200"></div>
@@ -372,9 +372,9 @@ export default function App() {
       </section>
 
       {/* 9. FAQ SECTION */}
-      <section id="faq" className="bg-sky-50/20 py-24 px-4 border-t border-slate-100">
+      <section id="faq" className="bg-sky-50/20 py-12 px-4 border-t border-slate-100">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center max-w-2xl mx-auto mb-16">
+          <div className="text-center max-w-2xl mx-auto mb-8">
             <span className="text-xs font-black text-sky-600 tracking-wider uppercase block mb-2">DÚVIDAS FREQUENTES</span>
             <h2 className="text-3xl md:text-4xl font-black text-slate-900 tracking-tight uppercase">
               Perguntas Frequentes
@@ -389,7 +389,7 @@ export default function App() {
       </section>
 
       {/* 10. FINAL BOTTOM CTA */}
-      <section className="bg-orange-500 text-white py-20 px-4 text-center relative overflow-hidden border-t border-orange-600">
+      <section className="bg-orange-500 text-white py-12 px-4 text-center relative overflow-hidden border-t border-orange-600">
         {/* Visual elements */}
         <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-orange-500 via-orange-600 to-orange-500 opacity-95 z-0"></div>
         
@@ -417,7 +417,7 @@ export default function App() {
       </section>
 
       {/* 11. FOOTER */}
-      <footer className="bg-slate-900 text-slate-400 py-12 px-4 text-center border-t border-slate-800 relative z-10">
+      <footer className="bg-slate-900 text-slate-400 py-8 px-4 text-center border-t border-slate-800 relative z-10">
         <div className="max-w-5xl mx-auto">
           <div className="flex items-center justify-center space-x-2 text-white font-black text-base mb-6">
             <Award className="w-6 h-6 text-orange-500" />

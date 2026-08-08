@@ -79,6 +79,7 @@ export const bonusList: BonusItem[] = [
     highlightText: 'HOJE GRÁTIS',
     accentColor: 'from-blue-600 to-indigo-700',
     description: 'Uma excelente ferramenta de gamificação para motivar as crianças a continuarem frequentando as aulas.',
+    imageUrl: 'https://res.cloudinary.com/dm2glkkcv/image/upload/v1786156030/ChatGPT_Image_7_de_ago._de_2026_23_19_25_tf2lzh.png',
   },
   {
     id: 'bn2',
@@ -88,6 +89,7 @@ export const bonusList: BonusItem[] = [
     highlightText: 'HOJE GRÁTIS',
     accentColor: 'from-amber-500 to-orange-600',
     description: 'Dinâmicas desenvolvidas para ensinar de forma descontraída as técnicas essenciais de autodefesa e esquiva.',
+    imageUrl: 'https://res.cloudinary.com/dm2glkkcv/image/upload/v1785983349/ChatGPT_Image_5_de_ago._de_2026_23_28_57_nx4ths.png',
   },
   {
     id: 'bn3',
@@ -97,6 +99,7 @@ export const bonusList: BonusItem[] = [
     highlightText: 'HOJE GRÁTIS',
     accentColor: 'from-emerald-500 to-teal-700',
     description: 'Exercícios sequenciais focados na melhora da mobilidade, do rolamento e das posturas de guarda.',
+    imageUrl: 'https://res.cloudinary.com/dm2glkkcv/image/upload/v1786014019/29a7ef44-3c58-489a-9435-da731da541a8_nzdcco.png',
   },
 ];
 

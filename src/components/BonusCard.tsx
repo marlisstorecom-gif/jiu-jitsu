@@ -8,51 +8,51 @@ export default function BonusCard() {
         return (
           <div
             key={bonus.id}
-            className="group relative bg-white border-2 border-slate-100 rounded-3xl p-6 flex flex-col justify-between text-slate-800 overflow-hidden shadow-sm hover:shadow-xl hover:border-orange-400/50 transition-all duration-300 transform hover:-translate-y-1"
+            className="group relative bg-white border-2 border-slate-100 rounded-3xl p-6 pt-16 flex flex-col justify-between text-slate-800 overflow-hidden shadow-sm hover:shadow-xl hover:border-orange-400/50 transition-all duration-300 transform hover:-translate-y-1"
           >
+            {/* Faixa no topo */}
+            <div className="absolute top-0 left-0 right-0 h-11 bg-gradient-to-r from-orange-600 to-amber-500 flex items-center justify-center font-black text-xs text-white tracking-widest uppercase z-20 shadow-sm">
+              BÔNUS 0{idx + 1}
+            </div>
+
             {/* Top background glow */}
             <div className={`absolute -top-24 -left-24 w-48 h-48 rounded-full bg-gradient-to-br ${bonus.accentColor} opacity-5 group-hover:scale-125 transition-transform duration-500 blur-2xl`}></div>
 
             <div>
-              {/* Product Type Icon & Tag */}
-              <div className="flex items-center justify-between mb-5 relative z-10">
-                <span className="p-2.5 rounded-2xl bg-orange-50 text-orange-500 border border-orange-100/80">
-                  {idx === 0 ? (
-                    <Award className="w-5 h-5 animate-pulse" />
-                  ) : idx === 1 ? (
-                    <Gift className="w-5 h-5 animate-bounce" />
-                  ) : (
-                    <BookOpen className="w-5 h-5" />
-                  )}
-                </span>
-                <span className="bg-orange-500 text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-wider shadow-sm">
-                  {bonus.highlightText}
-                </span>
-              </div>
-
               {/* Styled Book/Certificate Visual Mockup */}
-              <div className="relative w-full h-36 bg-slate-50 rounded-2xl border border-slate-150 mb-5 flex flex-col overflow-hidden shadow-inner group-hover:border-orange-200 transition-colors">
-                {/* Visual template based on item */}
-                <div className={`absolute inset-y-0 left-0 w-3 bg-gradient-to-b ${bonus.accentColor}`}></div>
-                
-                {/* Inner content */}
-                <div className="p-4 pl-6 flex-1 flex flex-col justify-between select-none">
-                  <div className="space-y-1">
-                    <span className="text-[9px] uppercase tracking-wider font-extrabold text-orange-500">BÔNUS EXCLUSIVO 0{idx + 1}</span>
-                    <h4 className="font-extrabold text-xs md:text-sm line-clamp-2 text-slate-800 group-hover:text-slate-900 transition-colors">
-                      {bonus.title}
-                    </h4>
-                  </div>
-                  
-                  {/* Subtle graphics details to look like real cover */}
-                  <div className="flex items-center justify-between border-t border-slate-200/60 pt-2">
-                    <span className="text-[8px] text-slate-500 font-bold">🥋 Jiu-Jitsu Infantil</span>
-                    <div className="flex space-x-1">
-                      <div className="w-2 h-2 rounded-full bg-orange-400"></div>
-                      <div className="w-2 h-2 rounded-full bg-sky-400"></div>
+              <div className={`relative w-full rounded-2xl border border-slate-150 mb-5 flex items-center justify-center overflow-hidden shadow-inner group-hover:border-orange-200 transition-colors ${bonus.imageUrl ? 'bg-transparent h-auto' : 'bg-slate-50 aspect-[4/3]'}`}>
+                {bonus.imageUrl ? (
+                  <img
+                    src={bonus.imageUrl}
+                    alt={bonus.title}
+                    className="w-full h-auto block object-contain group-hover:scale-105 transition-transform duration-300 rounded-2xl"
+                    referrerPolicy="no-referrer"
+                  />
+                ) : (
+                  <>
+                    {/* Visual template based on item */}
+                    <div className={`absolute inset-y-0 left-0 w-3 bg-gradient-to-b ${bonus.accentColor}`}></div>
+                    
+                    {/* Inner content */}
+                    <div className="p-4 pl-6 flex-1 flex flex-col justify-between select-none">
+                      <div className="space-y-1">
+                        <span className="text-[9px] uppercase tracking-wider font-extrabold text-orange-500">BÔNUS EXCLUSIVO 0{idx + 1}</span>
+                        <h4 className="font-extrabold text-xs md:text-sm line-clamp-2 text-slate-800 group-hover:text-slate-900 transition-colors">
+                          {bonus.title}
+                        </h4>
+                      </div>
+                      
+                      {/* Subtle graphics details to look like real cover */}
+                      <div className="flex items-center justify-between border-t border-slate-200/60 pt-2">
+                        <span className="text-[8px] text-slate-500 font-bold">🥋 Jiu-Jitsu Infantil</span>
+                        <div className="flex space-x-1">
+                          <div className="w-2 h-2 rounded-full bg-orange-400"></div>
+                          <div className="w-2 h-2 rounded-full bg-sky-400"></div>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                </div>
+                  </>
+                )}
               </div>
 
               {/* Title & Description */}

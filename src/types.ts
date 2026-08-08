@@ -21,6 +21,7 @@ export interface BonusItem {
   highlightText: string;
   accentColor: string;
   description: string;
+  imageUrl?: string;
 }
 
 export interface PricingPlan {
