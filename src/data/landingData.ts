@@ -20,12 +20,6 @@ export const featuresList: FeatureItem[] = [
     iconName: 'Users',
   },
   {
-    id: 'f4',
-    title: 'Acesso Digital',
-    description: 'Acesse de qualquer smartphone, tablet ou computador a qualquer hora.',
-    iconName: 'Smartphone',
-  },
-  {
     id: 'f5',
     title: 'Pronto para Imprimir',
     description: 'Leve as fichas em PDF para o tatame sem precisar de internet ou bateria.',
