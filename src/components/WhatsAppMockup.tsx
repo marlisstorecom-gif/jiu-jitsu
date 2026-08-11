@@ -27,14 +27,22 @@ export default function WhatsAppMockup() {
         <div className="absolute bottom-1 left-1/2 transform -translate-x-1/2 w-28 h-1.5 bg-slate-700 rounded-full z-20"></div>
 
         {/* Screen Container */}
-        <div className="relative bg-[#efeae2] rounded-[30px] overflow-hidden flex flex-col h-[520px] shadow-inner select-none font-sans text-slate-800">
+        <div className="relative bg-[#efeae2] rounded-[30px] overflow-hidden flex flex-col h-auto min-h-[460px] shadow-inner select-none font-sans text-slate-800">
           
           {/* WhatsApp Top Header Bar */}
           <div className="bg-[#075e54] text-white pt-6 pb-2.5 px-3 flex items-center justify-between shadow-md shrink-0">
             <div className="flex items-center space-x-2">
               <div className="w-9 h-9 rounded-full bg-slate-200 flex items-center justify-center font-bold text-slate-800 border-2 border-emerald-400 text-sm overflow-hidden select-none">
-                {/* Simulated Avatar initials or icon */}
-                <span className="text-xs">{activeTestimonial.name.split(' ').map(n => n[0]).join('')}</span>
+                {activeTestimonial.avatarUrl ? (
+                  <img 
+                    src={activeTestimonial.avatarUrl} 
+                    alt={activeTestimonial.name} 
+                    className="w-full h-full object-cover animate-fadeIn"
+                    referrerPolicy="no-referrer"
+                  />
+                ) : (
+                  <span className="text-xs">{activeTestimonial.name.split(' ').map(n => n[0]).join('')}</span>
+                )}
               </div>
               <div className="leading-tight">
                 <div className="font-bold text-xs max-w-[130px] truncate">{activeTestimonial.name}</div>
@@ -53,7 +61,7 @@ export default function WhatsAppMockup() {
           </div>
 
           {/* Chat Background & Message Bubbles Area */}
-          <div className="flex-1 overflow-y-auto p-3 space-y-3.5 flex flex-col no-scrollbar">
+          <div className="flex-1 p-3 space-y-3 flex flex-col">
             {/* System Info Banner */}
             <div className="self-center bg-[#d1f4cc]/80 text-[10px] text-slate-700 font-medium px-3 py-1 rounded-md shadow-sm text-center max-w-[240px]">
               🔒 As mensagens são protegidas por criptografia ponta a ponta.

@@ -48,6 +48,7 @@ export interface TestimonialItem {
   id: string;
   name: string;
   role: string;
+  avatarUrl?: string;
   messages: {
     sender: 'user' | 'me';
     text: string;

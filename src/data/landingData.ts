@@ -183,6 +183,7 @@ export const testimonials: TestimonialItem[] = [
     id: 't1',
     name: 'Sensei Rafael Silva',
     role: 'Professor de Jiu-Jitsu Infantil (Dojo Alliance)',
+    avatarUrl: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=256&h=256',
     messages: [
       { sender: 'user', text: 'Olá, mestre! Passando para agradecer. O kit de dinâmicas mudou da água pro vinho minhas turmas de 4 a 7 anos! Eles não param mais quietos de empolgação.', time: '14:20' },
       { sender: 'me', text: 'Que excelente notícia, Sensei! Qual dinâmica eles mais gostaram de jogar?', time: '14:22' },
@@ -193,6 +194,7 @@ export const testimonials: TestimonialItem[] = [
     id: 't2',
     name: 'Prof. Amanda Costa',
     role: 'Personal Trainer e Educadora Física',
+    avatarUrl: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=256&h=256',
     messages: [
       { sender: 'user', text: 'Dei a minha primeira aula de lutas alinhada à BNCC usando os exercícios e as dinâmicas do kit.', time: '09:12' },
       { sender: 'user', text: 'A diretora da escola foi assistir e adorou como consegui trabalhar a psicomotricidade sem perder o foco na disciplina.', time: '09:13' },
@@ -204,6 +206,7 @@ export const testimonials: TestimonialItem[] = [
     id: 't3',
     name: 'Mestre Hugo Santos',
     role: 'Líder da Equipe Gracie Barra Kids',
+    avatarUrl: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=256&h=256',
     messages: [
       { sender: 'user', text: 'Mestre, o Certificado do Jiu-Jiteiro fez um sucesso absurdo aqui na graduação da garotada.', time: '18:41' },
       { sender: 'me', text: 'Sensacional, Hugo! A premiação visual é muito importante nessa fase.', time: '18:43' },
