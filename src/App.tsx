@@ -293,11 +293,7 @@ export default function App() {
                         const isSuperBonus = feat.includes('SUPER BÔNUS');
                         return (
                           <li key={idx} className="flex items-start text-xs md:text-sm text-slate-600 font-medium">
-                            <span className={`mr-2.5 rounded-full p-0.5 shrink-0 mt-0.5 border ${
-                              isPremium 
-                                ? 'bg-orange-50 text-orange-500 border-orange-100' 
-                                : 'bg-sky-50 text-sky-600 border-sky-100'
-                            }`}>
+                            <span className="mr-2.5 rounded-full p-0.5 shrink-0 mt-0.5 border bg-emerald-50 text-emerald-600 border-emerald-200">
                               <Check className="w-3.5 h-3.5" />
                             </span>
                             <span className={
