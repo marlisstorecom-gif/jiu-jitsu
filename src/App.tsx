@@ -73,12 +73,6 @@ export default function App() {
 
         <div className="max-w-4xl mx-auto text-center relative z-10">
           
-          {/* Badge */}
-          <div className="inline-flex items-center space-x-2 bg-sky-50 border border-sky-100/80 text-sky-600 px-4 py-1.5 rounded-full text-xs font-black tracking-wider mb-6 uppercase shadow-sm">
-            <Sparkles className="w-3.5 h-3.5 text-sky-500 animate-spin" />
-            <span>O Maior Acervo de Jiu-Jitsu Infantil do Brasil</span>
-          </div>
-
           {/* Main Title */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-[0.95] tracking-tight uppercase mb-6 text-slate-900">
             +500 Dinâmicas <br/>
@@ -205,22 +199,22 @@ export default function App() {
 
         <div className="max-w-4xl mx-auto text-center relative z-10 mb-6">
           <span className="bg-orange-100 border border-orange-200/80 text-orange-600 text-[10px] font-black px-4 py-1.5 rounded-full uppercase tracking-wider mb-4 inline-block">
-            🎁 BÔNUS EXCLUSIVOS
+            🎁 BÔNUS EXCLUSIVOS & SUPER BÔNUS
           </span>
           <h2 className="text-3xl md:text-5xl font-black tracking-tight text-slate-900 uppercase mb-3">
-            Receba 3 Bônus Incríveis GRÁTIS!
+            Receba 3 Bônus Incríveis + 1 SUPER BÔNUS GRÁTIS!
           </h2>
           <p className="text-slate-500 text-xs md:text-sm font-extrabold uppercase tracking-wider max-w-xl mx-auto">
-            Valor total dos bônus separados: <span className="line-through text-red-500">R$ 97,00</span>
-            <span className="text-orange-500 block sm:inline sm:ml-2">(Mas comprando HOJE sai de graça!)</span>
+            Valor total dos bônus: <span className="line-through text-red-500">R$ 164,00</span>
+            <span className="text-orange-500 block sm:inline sm:ml-2">(Mas comprando HOJE sai tudo de graça!)</span>
           </p>
         </div>
 
         <BonusCard />
 
-        <div className="text-center mt-6 relative z-10">
+        <div className="text-center mt-8 relative z-10">
           <p className="text-xs text-slate-400 max-w-md mx-auto italic font-medium">
-            *Estes bônus de alto valor serão vinculados automaticamente ao seu painel assim que concluir a compra hoje.
+            *Todos os bônus e o super bônus serão vinculados automaticamente à sua conta imediatamente após a confirmação do pagamento.
           </p>
         </div>
       </section>
