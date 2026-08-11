@@ -248,70 +248,81 @@ export default function App() {
                 }`}
               >
                 {isPremium && (
-                  <span className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-orange-500 text-white text-[10px] font-black px-4 py-1.5 rounded-full uppercase tracking-wider shadow-md">
+                  <span className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-orange-500 text-white text-[10px] font-black px-4 py-1.5 rounded-full uppercase tracking-wider shadow-md whitespace-nowrap">
                     ⚡ MAIS POPULAR & RECOMENDADO
                   </span>
                 )}
 
-                <div>
-                  <div className="flex items-center justify-between mb-4">
-                    <h3 className="text-xl md:text-2xl font-black text-slate-900">{plan.name}</h3>
+                <div className="flex flex-col items-center text-center">
+                  <div className="flex flex-col items-center mb-3">
                     {isPremium && (
-                      <span className="bg-orange-100 text-orange-600 text-[10px] font-black px-2.5 py-0.5 rounded-full">
-                        Super Kit
+                      <span className="bg-orange-100 text-orange-600 text-[10px] font-black px-2.5 py-1 rounded-full mb-2">
+                        Super Kit Premium
                       </span>
                     )}
+                    <h3 className="text-2xl md:text-3xl font-black text-slate-900 uppercase tracking-tight">{plan.name}</h3>
                   </div>
                   
-                  <p className="text-slate-500 text-xs md:text-sm mb-6 leading-relaxed font-medium">
+                  <p className="text-slate-500 text-xs md:text-sm mb-6 leading-relaxed font-medium max-w-sm">
                     {plan.tagline}
                   </p>
 
                   {/* Pricing Display */}
-                  <div className={`mb-6 pb-6 border-b ${isPremium ? 'border-orange-100' : 'border-slate-100'}`}>
-                    <span className="text-xs text-slate-400 block font-bold">De R$ {plan.originalPrice.toFixed(2).replace('.', ',')} por:</span>
-                    <div className="flex items-baseline space-x-2">
-                      <span className="text-slate-900 font-extrabold text-3xl md:text-4xl">R$</span>
-                      <span className="text-slate-900 font-black text-4xl md:text-5xl tracking-tight">
+                  <div className={`w-full mb-6 pb-6 border-b flex flex-col items-center ${isPremium ? 'border-orange-100' : 'border-slate-100'}`}>
+                    <span className="text-xs text-slate-400 block font-bold mb-1">
+                      De R$ {plan.originalPrice.toFixed(2).replace('.', ',')} por apenas:
+                    </span>
+                    <div className="flex items-baseline justify-center space-x-1">
+                      <span className="text-slate-900 font-extrabold text-2xl md:text-3xl">R$</span>
+                      <span className="text-slate-900 font-black text-5xl md:text-6xl tracking-tight">
                         {plan.currentPrice.toFixed(2).split('.')[0]}
                       </span>
-                      <span className="text-slate-900 font-black text-2xl">
+                      <span className="text-slate-900 font-black text-2xl md:text-3xl">
                         ,{plan.currentPrice.toFixed(2).split('.')[1]}
                       </span>
-                      <span className="text-xs text-slate-400 font-bold ml-1">Pagamento Único</span>
                     </div>
-                    <span className="text-[10px] text-orange-500 font-black uppercase tracking-wider block mt-1">✓ Sem mensalidades ou surpresas</span>
+                    <span className="text-xs text-slate-400 font-bold mt-1 block">Pagamento Único • Acesso Vitalício</span>
+                    <span className="text-[10px] text-orange-500 font-black uppercase tracking-wider block mt-2">✓ Sem mensalidades ou surpresas</span>
                   </div>
 
                   {/* Features List */}
-                  <ul className="space-y-3.5 mb-8">
-                    {plan.features.map((feat, idx) => {
-                      const isBonus = feat.includes('(Bônus)');
-                      return (
-                        <li key={idx} className="flex items-start text-xs md:text-sm text-slate-600 font-medium">
-                          <span className={`mr-2.5 rounded-full p-0.5 shrink-0 mt-0.5 border ${
-                            isPremium 
-                              ? 'bg-orange-50 text-orange-500 border-orange-100' 
-                              : 'bg-sky-50 text-sky-600 border-sky-100'
-                          }`}>
-                            <Check className="w-3.5 h-3.5" />
-                          </span>
-                          <span className={isBonus ? 'font-bold text-orange-500' : ''}>
-                            {feat}
-                          </span>
-                        </li>
-                      );
-                    })}
-                  </ul>
+                  <div className="w-full flex justify-center mb-8">
+                    <ul className="space-y-3.5 text-left w-full max-w-xs md:max-w-sm">
+                      {plan.features.map((feat, idx) => {
+                        const isBonus = feat.includes('(Bônus)');
+                        const isSuperBonus = feat.includes('SUPER BÔNUS');
+                        return (
+                          <li key={idx} className="flex items-start text-xs md:text-sm text-slate-600 font-medium">
+                            <span className={`mr-2.5 rounded-full p-0.5 shrink-0 mt-0.5 border ${
+                              isPremium 
+                                ? 'bg-orange-50 text-orange-500 border-orange-100' 
+                                : 'bg-sky-50 text-sky-600 border-sky-100'
+                            }`}>
+                              <Check className="w-3.5 h-3.5" />
+                            </span>
+                            <span className={
+                              isSuperBonus 
+                                ? 'font-black text-amber-600 bg-amber-50 border border-amber-200 px-2 py-0.5 rounded-md text-[10px] uppercase tracking-wider inline-block' 
+                                : isBonus 
+                                ? 'font-bold text-orange-500' 
+                                : ''
+                            }>
+                              {feat}
+                            </span>
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  </div>
                 </div>
 
                 {/* Checkout CTA */}
-                <div className={`mt-auto pt-4 border-t ${isPremium ? 'border-orange-100' : 'border-slate-100'}`}>
+                <div className={`mt-auto pt-4 border-t flex flex-col items-center w-full ${isPremium ? 'border-orange-100' : 'border-slate-100'}`}>
                   {plan.id === 'p_basic' ? (
                     <button
                       type="button"
                       onClick={() => setIsUpsellOpen(true)}
-                      className="w-full py-4 px-6 rounded-2xl text-center font-black text-xs md:text-sm uppercase tracking-wider flex items-center justify-center space-x-2 shadow-sm transition-all duration-200 transform hover:-translate-y-0.5 cursor-pointer bg-slate-100 hover:bg-slate-200 text-slate-800"
+                      className="w-full max-w-sm py-4 px-6 rounded-2xl text-center font-black text-xs md:text-sm uppercase tracking-wider flex items-center justify-center space-x-2 shadow-sm transition-all duration-200 transform hover:-translate-y-0.5 cursor-pointer bg-slate-100 hover:bg-slate-200 text-slate-800"
                     >
                       <span>{plan.buttonText}</span>
                       <Sparkles className="w-4 h-4 shrink-0 text-orange-500" />
@@ -321,7 +332,7 @@ export default function App() {
                       href={plan.checkoutUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-full py-4 px-6 rounded-2xl text-center font-black text-xs md:text-sm uppercase tracking-wider flex items-center justify-center space-x-2 shadow-sm transition-all duration-200 transform hover:-translate-y-0.5 cursor-pointer bg-orange-500 hover:bg-orange-600 text-white shadow-md shadow-orange-500/20"
+                      className="w-full max-w-sm py-4 px-6 rounded-2xl text-center font-black text-xs md:text-sm uppercase tracking-wider flex items-center justify-center space-x-2 shadow-sm transition-all duration-200 transform hover:-translate-y-0.5 cursor-pointer bg-orange-500 hover:bg-orange-600 text-white shadow-md shadow-orange-500/20"
                     >
                       <span>{plan.buttonText}</span>
                       <ExternalLink className="w-4 h-4 shrink-0" />
@@ -329,13 +340,13 @@ export default function App() {
                   )}
 
                   {/* Trust Badges */}
-                  <div className="flex justify-center space-x-4 mt-5 text-[10px] text-slate-400 font-bold">
+                  <div className="flex flex-wrap justify-center gap-4 mt-5 text-[10px] text-slate-400 font-bold w-full">
                     <span className="flex items-center"><Lock className="w-3 h-3 text-orange-500 mr-1" /> Compra Segura</span>
                     <span className="flex items-center"><ShieldCheck className="w-3 h-3 text-orange-500 mr-1" /> Satisfação Garantida</span>
                   </div>
 
                   {/* WhatsApp Info */}
-                  <div className={`mt-4 rounded-xl p-3 text-center ${isPremium ? 'bg-emerald-50 border border-emerald-100' : 'bg-slate-50 border border-slate-100'}`}>
+                  <div className={`mt-4 rounded-xl p-3 text-center w-full max-w-sm ${isPremium ? 'bg-emerald-50 border border-emerald-100' : 'bg-slate-50 border border-slate-100'}`}>
                     <p className={`text-[10px] font-black uppercase tracking-wider flex items-center justify-center space-x-1.5 ${isPremium ? 'text-emerald-600' : 'text-slate-500'}`}>
                       <span className={`w-2 h-2 rounded-full animate-pulse inline-block ${isPremium ? 'bg-emerald-500' : 'bg-slate-400'}`}></span>
                       <span>RECEBA O MATERIAL DIRETO NO WHATSAPP</span>

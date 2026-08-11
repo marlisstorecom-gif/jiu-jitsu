@@ -16,23 +16,6 @@ export default function WhatsAppMockup() {
 
   return (
     <div className="w-full max-w-md mx-auto px-4">
-      {/* Selector Tabs for testimonials */}
-      <div className="flex justify-center space-x-2 mb-6 overflow-x-auto py-2 no-scrollbar">
-        {testimonials.map((t, index) => (
-          <button
-            key={t.id}
-            onClick={() => setActiveIndex(index)}
-            className={`px-3 py-1.5 rounded-full text-xs font-bold whitespace-nowrap transition-all duration-200 ${
-              activeIndex === index
-                ? 'bg-orange-500 text-white shadow-md'
-                : 'bg-white text-slate-600 hover:bg-slate-50 border border-slate-200 shadow-sm'
-            }`}
-          >
-            {t.name.split(' ')[1] ? `${t.name.split(' ')[0]} ${t.name.split(' ')[1]}` : t.name}
-          </button>
-        ))}
-      </div>
-
       {/* Main Interactive Phone Mockup Container */}
       <div className="relative mx-auto bg-slate-900 rounded-[40px] p-3.5 shadow-2xl border-4 border-slate-800 max-w-[340px] md:max-w-[360px]">
         {/* Notch / Speaker */}
