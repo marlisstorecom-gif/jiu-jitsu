@@ -1,1 +1,13 @@
 @import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", sans-serif;
+  --font-display: "Barlow Condensed", sans-serif;
+
+  --color-navy: #0B132B;
+  --color-brand-orange: #FF6A00;
+  --color-brand-yellow: #FFC928;
+  --color-off-white: #F7F7F5;
+  --color-text-secondary: #5F6675;
+  --color-border-soft: #E5E7EB;
+}

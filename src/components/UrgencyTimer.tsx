@@ -51,25 +51,25 @@ export default function UrgencyTimer() {
   return (
     <div id="countdown-timer" className="flex items-center justify-center space-x-3 md:space-x-4 my-6">
       <div className="flex flex-col items-center">
-        <div className="bg-orange-500 border-b-4 border-orange-600 shadow-md text-white font-black text-2xl md:text-3xl px-3.5 py-2.5 rounded-2xl min-w-[60px] md:min-w-[70px] text-center">
+        <div className="bg-brand-orange border-b-4 border-[#E05B00] shadow-md text-white font-display font-black text-3xl md:text-4xl px-3.5 py-2 rounded-2xl min-w-[60px] md:min-w-[70px] text-center tracking-tight">
           {formatNumber(hours)}
         </div>
         <span className="text-[10px] md:text-xs font-extrabold text-slate-500 uppercase tracking-wider mt-1.5">Horas</span>
       </div>
       
-      <span className="text-xl md:text-2xl font-black text-orange-400 self-start mt-2.5">:</span>
+      <span className="text-xl md:text-2xl font-black text-brand-orange self-start mt-2">:</span>
 
       <div className="flex flex-col items-center">
-        <div className="bg-orange-500 border-b-4 border-orange-600 shadow-md text-white font-black text-2xl md:text-3xl px-3.5 py-2.5 rounded-2xl min-w-[60px] md:min-w-[70px] text-center">
+        <div className="bg-brand-orange border-b-4 border-[#E05B00] shadow-md text-white font-display font-black text-3xl md:text-4xl px-3.5 py-2 rounded-2xl min-w-[60px] md:min-w-[70px] text-center tracking-tight">
           {formatNumber(minutes)}
         </div>
         <span className="text-[10px] md:text-xs font-extrabold text-slate-500 uppercase tracking-wider mt-1.5">Minutos</span>
       </div>
 
-      <span className="text-xl md:text-2xl font-black text-orange-400 self-start mt-2.5">:</span>
+      <span className="text-xl md:text-2xl font-black text-brand-orange self-start mt-2">:</span>
 
       <div className="flex flex-col items-center">
-        <div className="bg-orange-500 border-b-4 border-orange-600 shadow-md text-white font-black text-2xl md:text-3xl px-3.5 py-2.5 rounded-2xl min-w-[60px] md:min-w-[70px] text-center">
+        <div className="bg-brand-orange border-b-4 border-[#E05B00] shadow-md text-white font-display font-black text-3xl md:text-4xl px-3.5 py-2 rounded-2xl min-w-[60px] md:min-w-[70px] text-center tracking-tight">
           {formatNumber(seconds)}
         </div>
         <span className="text-[10px] md:text-xs font-extrabold text-slate-500 uppercase tracking-wider mt-1.5">Segundos</span>
