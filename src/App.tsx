@@ -59,56 +59,72 @@ export default function App() {
       
       {/* 1. TOP ANNOUNCEMENT BAR */}
       <div className="bg-brand-orange text-white text-center py-2.5 px-4 text-xs font-display font-black tracking-wider uppercase flex items-center justify-center space-x-2 relative z-50 shadow-sm">
-        <span className="animate-pulse">🥋</span>
-        <span>Dificuldade para manter a atenção dos pequenos no tatame?</span>
+        <span>🥋 PARA PROFESSORES E SENSEIS DE JIU-JITSU INFANTIL</span>
       </div>
 
 
 
       {/* 2. HERO SECTION */}
-      <section className="relative bg-off-white pt-6 md:pt-10 pb-12 px-4 overflow-hidden border-b border-border-soft">
+      <section className="relative bg-off-white pt-10 md:pt-16 pb-16 px-4 overflow-hidden border-b border-border-soft">
         {/* Glowing background accents */}
         <div className="absolute top-1/4 left-10 w-72 h-72 bg-navy rounded-full mix-blend-multiply filter blur-3xl opacity-[0.03] -z-10 animate-blob"></div>
-        <div className="absolute top-1/3 right-10 w-72 h-72 bg-brand-orange rounded-full mix-blend-multiply filter blur-3xl opacity-[0.05] -z-10 animate-blob animation-delay-2000"></div>
+        <div className="absolute top-1/3 right-10 w-72 h-72 bg-brand-orange rounded-full mix-blend-multiply filter blur-3xl opacity-[0.04] -z-10 animate-blob animation-delay-2000"></div>
 
-        <div className="max-w-4xl mx-auto text-center relative z-10">
+        <div className="max-w-4xl mx-auto text-center relative z-10 flex flex-col items-center">
           
-          {/* Main Title */}
+          {/* 2. Headline */}
           <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-display font-black leading-[0.95] tracking-tight uppercase mb-6 text-navy">
             <span className="text-brand-orange font-black">+500</span> Dinâmicas <br/>
             Interativas de <span className="text-brand-orange font-black">Jiu-Jitsu Infantil</span>
           </h1>
 
-          {/* Subtitle */}
-          <p className="text-text-secondary text-base md:text-lg max-w-2xl mx-auto leading-relaxed mb-6 font-medium">
-            Aumente o engajamento das crianças de 3 a 14 anos, torne-se uma referência em didática lúdica e elimine de vez a dispersão no tatame com jogos e metodologias validadas.
+          {/* 3. Subheadline */}
+          <p className="text-text-secondary text-sm sm:text-base md:text-lg max-w-2xl mx-auto leading-relaxed mb-8 font-medium">
+            Nunca mais fique sem ideias para sua aulas de JIU-JITSU INFANTIL
           </p>
 
-          {/* Hero Mockup Image */}
-          <div className="mb-10 flex justify-center px-4">
+          {/* 5. Hero Mockup Image (Increased presence & depth) */}
+          <div className="mb-8 flex justify-center px-4 w-full relative">
+            <div className="absolute inset-0 bg-gradient-to-tr from-brand-orange/5 to-brand-yellow/5 rounded-full filter blur-3xl max-w-md mx-auto -z-10 opacity-70"></div>
             <img 
               src="https://res.cloudinary.com/dm2glkkcv/image/upload/v1786159470/823c9bd3-9034-4bda-a5d3-ddb19fd9d502_dlbwea.png" 
               alt="Mockup do Acervo de Jiu-Jitsu Infantil"
-              className="w-full max-w-xl md:max-w-3xl h-auto object-contain drop-shadow-2xl hover:scale-[1.02] transition-transform duration-500"
+              className="w-full max-w-lg md:max-w-2xl lg:max-w-3xl h-auto object-contain drop-shadow-3xl hover:scale-[1.015] transition-transform duration-500"
               referrerPolicy="no-referrer"
             />
           </div>
 
-          {/* Main CTA Button */}
-          <div className="flex flex-col items-center justify-center space-y-4">
+          {/* 6. Quick Value Indicators */}
+          <div className="flex flex-wrap items-center justify-center gap-2 md:gap-4 text-[10px] sm:text-xs text-navy font-display font-black uppercase tracking-wider mb-8">
+            <span className="flex items-center px-3 py-1.5 bg-white rounded-full border border-border-soft shadow-xs">
+              <Check className="w-3.5 h-3.5 text-brand-orange mr-1.5 shrink-0" /> +500 DINÂMICAS
+            </span>
+            <span className="flex items-center px-3 py-1.5 bg-white rounded-full border border-border-soft shadow-xs">
+              <Check className="w-3.5 h-3.5 text-brand-orange mr-1.5 shrink-0" /> PRONTO PARA APLICAR
+            </span>
+            <span className="flex items-center px-3 py-1.5 bg-white rounded-full border border-border-soft shadow-xs">
+              <Check className="w-3.5 h-3.5 text-brand-orange mr-1.5 shrink-0" /> ACESSO IMEDIATO
+            </span>
+          </div>
+
+          {/* 7. Main CTA Button */}
+          <div className="flex flex-col items-center justify-center w-full">
             <button
               onClick={scrollToPricing}
-              className="w-full max-w-md bg-brand-orange hover:bg-[#E05B00] text-white font-display font-black text-base md:text-lg py-5 px-8 rounded-2xl shadow-lg shadow-brand-orange/20 hover:scale-[1.03] active:scale-[0.98] transition-all duration-300 tracking-wider uppercase flex items-center justify-center space-x-3 cursor-pointer"
+              className="w-full max-w-md bg-brand-orange hover:bg-[#E05B00] text-white font-display font-black text-base sm:text-lg md:text-xl py-4.5 px-8 rounded-2xl shadow-lg shadow-brand-orange/20 hover:scale-[1.03] active:scale-[0.98] transition-all duration-300 tracking-wider uppercase flex items-center justify-center space-x-3 cursor-pointer"
             >
-              <span>QUERO ACESSO COMPLETO AGORA!</span>
+              <span>QUERO ACESSAR AS +500 DINÂMICAS</span>
               <ChevronRight className="w-5 h-5 animate-bounce-horizontal" />
             </button>
 
-            {/* Micro-guarantees */}
-            <div className="flex flex-wrap items-center justify-center gap-y-2 gap-x-6 text-xs text-text-secondary font-bold">
-              <span className="flex items-center"><Check className="w-4 h-4 text-brand-orange mr-1.5" /> Acesso imediato no e-mail</span>
-              <span className="flex items-center"><Check className="w-4 h-4 text-brand-orange mr-1.5" /> Pagamento único sem mensalidades</span>
-              <span className="flex items-center"><Check className="w-4 h-4 text-brand-orange mr-1.5" /> Garantia incondicional de 7 dias</span>
+            {/* 8. Micro-proof Reduction of Risk */}
+            <div className="flex items-center justify-center space-x-2 text-[10px] sm:text-xs text-text-secondary font-bold mt-4">
+              <Lock className="w-3.5 h-3.5 text-brand-orange shrink-0" />
+              <span>Acesso imediato</span>
+              <span className="text-border-soft">•</span>
+              <span>Material digital</span>
+              <span className="text-border-soft">•</span>
+              <span>Garantia de 7 dias</span>
             </div>
           </div>
         </div>
