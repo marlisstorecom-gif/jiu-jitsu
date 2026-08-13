@@ -117,7 +117,7 @@ export const pricingPlans: PricingPlan[] = [
     ],
     buttonText: 'ESCOLHER PLANO BÁSICO',
     popular: false,
-    checkoutUrl: 'https://pay.kiwify.com.br/basico-placeholder', // We use standard URLs as requested
+    checkoutUrl: 'https://go.pepperpay.com.br/b7b7e', // We use standard URLs as requested
   },
   {
     id: 'p_premium',
@@ -140,7 +140,7 @@ export const pricingPlans: PricingPlan[] = [
     ],
     buttonText: 'QUERO O PLANO PREMIUM',
     popular: true,
-    checkoutUrl: 'https://pay.kiwify.com.br/premium-placeholder',
+    checkoutUrl: 'https://go.pepperpay.com.br/jl4fe',
     bonusIncluded: ['bn1', 'bn2', 'bn3'],
   },
 ];

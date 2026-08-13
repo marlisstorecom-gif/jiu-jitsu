@@ -32,12 +32,12 @@ export default function App() {
   };
 
   const handleAcceptUpsell = () => {
-    window.open('https://pay.kiwify.com.br/premium-desconto-1490', '_blank');
+    window.open('https://go.pepperpay.com.br/sobee', '_blank');
     setIsUpsellOpen(false);
   };
 
   const handleDeclineUpsell = () => {
-    window.open('https://pay.kiwify.com.br/basico-placeholder', '_blank');
+    window.open('https://go.pepperpay.com.br/b7b7e', '_blank');
     setIsUpsellOpen(false);
   };
 
