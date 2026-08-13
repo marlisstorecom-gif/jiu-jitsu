@@ -30,7 +30,16 @@ export default function BonusCard() {
 
             <div>
               {/* Styled Book/Certificate Visual Mockup */}
-              {isSuper ? (
+              {bonus.imageUrl ? (
+                <div className="relative w-full rounded-2xl border border-border-soft mb-5 flex items-center justify-center overflow-hidden shadow-inner group-hover:border-brand-orange/30 transition-colors bg-transparent h-auto">
+                  <img
+                    src={bonus.imageUrl}
+                    alt={bonus.title}
+                    className="w-full h-auto block object-contain group-hover:scale-105 transition-transform duration-300 rounded-2xl"
+                    referrerPolicy="no-referrer"
+                  />
+                </div>
+              ) : isSuper ? (
                 /* Super Bonus Visual Mockup in CSS */
                 <div className="relative w-full aspect-[4/3] bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 rounded-2xl border border-amber-500/40 mb-5 flex items-center justify-center overflow-hidden shadow-inner group-hover:border-amber-400 transition-colors select-none">
                   {/* Grid lines pattern */}
@@ -61,40 +70,31 @@ export default function BonusCard() {
                   </div>
                 </div>
               ) : (
-                /* Standard Visual Mockup (Image or synthetic book cover) */
-                <div className={`relative w-full rounded-2xl border border-border-soft mb-5 flex items-center justify-center overflow-hidden shadow-inner group-hover:border-brand-orange/30 transition-colors ${bonus.imageUrl ? 'bg-transparent h-auto' : 'bg-slate-50 aspect-[4/3]'}`}>
-                  {bonus.imageUrl ? (
-                    <img
-                      src={bonus.imageUrl}
-                      alt={bonus.title}
-                      className="w-full h-auto block object-contain group-hover:scale-105 transition-transform duration-300 rounded-2xl"
-                      referrerPolicy="no-referrer"
-                    />
-                  ) : (
-                    <>
-                      {/* Visual template based on item */}
-                      <div className={`absolute inset-y-0 left-0 w-3 bg-gradient-to-b ${bonus.accentColor}`}></div>
+                /* Standard Visual Mockup (synthetic book cover) */
+                <div className="relative w-full rounded-2xl border border-border-soft mb-5 flex items-center justify-center overflow-hidden shadow-inner group-hover:border-brand-orange/30 transition-colors bg-slate-50 aspect-[4/3]">
+                  <>
+                    {/* Visual template based on item */}
+                    <div className={`absolute inset-y-0 left-0 w-3 bg-gradient-to-b ${bonus.accentColor}`}></div>
+                    
+                    {/* Inner content */}
+                    <div className="p-4 pl-6 flex-1 flex flex-col justify-between select-none">
+                      <div className="space-y-1">
+                        <span className="text-[9px] uppercase tracking-wider font-extrabold text-brand-orange">BÔNUS EXCLUSIVO 0{idx + 1}</span>
+                        <h4 className="font-display font-black text-xs md:text-sm line-clamp-2 text-navy group-hover:text-brand-orange transition-colors">
+                          {bonus.title}
+                        </h4>
+                      </div>
                       
-                      {/* Inner content */}
-                      <div className="p-4 pl-6 flex-1 flex flex-col justify-between select-none">
-                        <div className="space-y-1">
-                          <span className="text-[9px] uppercase tracking-wider font-extrabold text-brand-orange">BÔNUS EXCLUSIVO 0{idx + 1}</span>
-                          <h4 className="font-display font-black text-xs md:text-sm line-clamp-2 text-navy group-hover:text-brand-orange transition-colors">
-                            {bonus.title}
-                          </h4>
-                        </div>
-                        
-                        {/* Subtle graphics details to look like real cover */}
-                        <div className="flex items-center justify-between border-t border-border-soft pt-2">
-                          <span className="text-[8px] text-slate-500 font-bold">🥋 Jiu-Jitsu Infantil</span>
-                          <div className="flex space-x-1">
-                            <div className="w-2 h-2 rounded-full bg-brand-orange"></div>
-                            <div className="w-2 h-2 rounded-full bg-sky-400"></div>
-                          </div>
+                      {/* Subtle graphics details to look like real cover */}
+                      <div className="flex items-center justify-between border-t border-border-soft pt-2">
+                        <span className="text-[8px] text-slate-500 font-bold">🥋 Jiu-Jitsu Infantil</span>
+                        <div className="flex space-x-1">
+                          <div className="w-2 h-2 rounded-full bg-brand-orange"></div>
+                          <div className="w-2 h-2 rounded-full bg-sky-400"></div>
                         </div>
                       </div>
-                    </>
-                  )}
+                    </div>
+                  </>
                 </div>
               )}
 

@@ -98,6 +98,7 @@ export const bonusList: BonusItem[] = [
     accentColor: 'from-amber-400 via-orange-500 to-red-600',
     description: 'O maior segredo de retenção! Kit completo com Passaporte do Guerreiro pronto para imprimir, Cartões de Missão dinâmicos, Quadro de Evolução individual, Medalhas e sistema de recompensas para vencer a dispersão.',
     isSuperBonus: true,
+    imageUrl: 'https://res.cloudinary.com/dm2glkkcv/image/upload/v1786584576/ChatGPT_Image_12_de_ago._de_2026_22_27_36_km1fjv.png',
   },
 ];
 
