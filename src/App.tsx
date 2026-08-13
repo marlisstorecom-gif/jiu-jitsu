@@ -98,7 +98,7 @@ export default function App() {
           <div className="flex flex-col items-center justify-center space-y-4">
             <button
               onClick={scrollToPricing}
-              className="w-full max-w-md bg-brand-orange hover:bg-[#E05B00] text-white font-display font-black text-base md:text-lg py-5 px-8 rounded-2xl shadow-lg shadow-brand-orange/20 hover:scale-[1.03] active:scale-[0.98] transition-all duration-300 tracking-wider uppercase flex items-center justify-center space-x-3 cursor-pointer"
+              className="w-full max-w-md bg-brand-orange hover:bg-[#E05B00] text-white font-display font-black text-base md:text-lg py-5 px-8 rounded-2xl shadow-lg shadow-brand-orange/20 active:scale-[0.98] transition-all duration-300 tracking-wider uppercase flex items-center justify-center space-x-3 cursor-pointer animate-pulse-btn"
             >
               <span>QUERO ACESSO COMPLETO AGORA!</span>
               <ChevronRight className="w-5 h-5 animate-bounce-horizontal" />
@@ -206,19 +206,18 @@ export default function App() {
           <h2 className="text-4xl md:text-6xl font-display font-black tracking-tight text-navy uppercase mb-3 leading-tight">
             Receba 3 Bônus Incríveis + 1 SUPER BÔNUS GRÁTIS!
           </h2>
-          <p className="text-text-secondary text-xs md:text-sm font-extrabold uppercase tracking-wider max-w-xl mx-auto">
-            Valor total dos bônus: <span className="line-through text-red-500">R$ 164,00</span>
-            <span className="text-brand-orange block sm:inline sm:ml-2">(Mas comprando HOJE sai tudo de graça!)</span>
-          </p>
         </div>
 
         <BonusCard />
 
         <div className="text-center mt-8 relative z-10">
-          <p className="text-xs text-slate-400 max-w-md mx-auto italic font-medium">
-            *Todos os bônus e o super bônus serão vinculados automaticamente à sua conta imediatamente após a confirmação do pagamento.
+          <p className="text-text-secondary text-sm font-extrabold uppercase tracking-wider max-w-xl mx-auto">
+            Valor total dos bônus: <span className="line-through text-red-500">R$ 164,00</span>
+            <span className="text-brand-orange block sm:inline sm:ml-2">(Mas comprando HOJE sai tudo de graça!)</span>
           </p>
         </div>
+
+
       </section>
 
       {/* 6. URGENCY & PRICING SECTION */}
@@ -331,7 +330,7 @@ export default function App() {
                         href={plan.checkoutUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-full max-w-sm py-4 px-6 rounded-2xl text-center font-display font-black text-xs md:text-sm uppercase tracking-wider flex items-center justify-center space-x-2 shadow-sm transition-all duration-200 transform hover:-translate-y-0.5 cursor-pointer bg-brand-orange hover:bg-[#E05B00] text-white shadow-md shadow-brand-orange/20"
+                        className="w-full max-w-sm py-4 px-6 rounded-2xl text-center font-display font-black text-xs md:text-sm uppercase tracking-wider flex items-center justify-center space-x-2 shadow-sm transition-all duration-200 transform hover:-translate-y-0.5 cursor-pointer bg-brand-orange hover:bg-[#E05B00] text-white shadow-md shadow-brand-orange/20 animate-pulse-btn"
                       >
                         <span>{plan.buttonText}</span>
                         <ExternalLink className="w-4 h-4 shrink-0" />
