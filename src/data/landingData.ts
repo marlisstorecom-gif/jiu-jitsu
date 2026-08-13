@@ -14,12 +14,6 @@ export const featuresList: FeatureItem[] = [
     iconName: 'Gift',
   },
   {
-    id: 'f3',
-    title: 'Área de Membros',
-    description: 'Acesso a todo o conteúdo organizado de forma sequencial e fácil de consultar.',
-    iconName: 'Users',
-  },
-  {
     id: 'f5',
     title: 'Pronto para Imprimir',
     description: 'Leve as fichas em PDF para o tatame sem precisar de internet ou bateria.',

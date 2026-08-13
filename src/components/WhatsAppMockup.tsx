@@ -1,131 +1,149 @@
-import { useState } from 'react';
-import { testimonials } from '../data/landingData';
-import { Phone, Video, MoreVertical, ChevronLeft, ChevronRight, CheckCheck, Send } from 'lucide-react';
+import { useState, useEffect, useCallback } from 'react';
+import { ChevronLeft, ChevronRight, MessageSquare } from 'lucide-react';
+import { motion, AnimatePresence } from 'motion/react';
+
+const TESTIMONIAL_IMAGES = [
+  'https://res.cloudinary.com/dm2glkkcv/image/upload/v1786582241/img_0136_5_a1jinc.png',
+  'https://res.cloudinary.com/dm2glkkcv/image/upload/v1786582241/img_0136_6_droduj.png',
+  'https://res.cloudinary.com/dm2glkkcv/image/upload/v1786582241/img_0136_7_tc4gvp.png'
+];
 
 export default function WhatsAppMockup() {
   const [activeIndex, setActiveIndex] = useState(0);
-  const activeTestimonial = testimonials[activeIndex];
 
-  const nextTestimonial = () => {
-    setActiveIndex((prev) => (prev + 1) % testimonials.length);
-  };
+  const handleNext = useCallback(() => {
+    setActiveIndex((prev) => (prev + 1) % TESTIMONIAL_IMAGES.length);
+  }, []);
 
-  const prevTestimonial = () => {
-    setActiveIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+  const handlePrev = useCallback(() => {
+    setActiveIndex((prev) => (prev - 1 + TESTIMONIAL_IMAGES.length) % TESTIMONIAL_IMAGES.length);
+  }, []);
+
+  useEffect(() => {
+    // Rotation every 8 seconds without pausing
+    const interval = setInterval(() => {
+      handleNext();
+    }, 8000);
+    return () => clearInterval(interval);
+  }, [handleNext]);
+
+  // Slide transition variants (always slide left on auto-advance)
+  const slideVariants = {
+    enter: {
+      x: '100%',
+      opacity: 1
+    },
+    center: {
+      x: '0%',
+      opacity: 1
+    },
+    exit: {
+      x: '-100%',
+      opacity: 1
+    }
   };
 
   return (
-    <div className="w-full max-w-md mx-auto px-4">
-      {/* Main Interactive Phone Mockup Container */}
-      <div className="relative mx-auto bg-slate-900 rounded-[40px] p-3.5 shadow-2xl border-4 border-slate-800 max-w-[340px] md:max-w-[360px]">
-        {/* Notch / Speaker */}
-        <div className="absolute top-0 left-1/2 transform -translate-x-1/2 h-5 w-32 bg-slate-900 rounded-b-2xl z-20 flex items-center justify-center">
-          <div className="w-12 h-1 bg-slate-800 rounded-full mb-1"></div>
-        </div>
-
-        {/* Home indicator bar at bottom */}
-        <div className="absolute bottom-1 left-1/2 transform -translate-x-1/2 w-28 h-1.5 bg-slate-700 rounded-full z-20"></div>
-
-        {/* Screen Container */}
-        <div className="relative bg-[#efeae2] rounded-[30px] overflow-hidden flex flex-col h-auto min-h-[460px] shadow-inner select-none font-sans text-slate-800">
+    <div className="w-full max-w-lg mx-auto px-4 flex flex-col items-center">
+      {/* 
+        Sleek, Auto-sizing Smartphone Frame.
+        We do NOT use a fixed aspect ratio class here. 
+        Instead, we let the inner layout size the outer frame perfectly.
+      */}
+      <div 
+        className="relative mx-auto bg-slate-900 rounded-[36px] p-2 shadow-2xl border-4 border-slate-800 w-full max-w-[320px] md:max-w-[340px] overflow-hidden flex flex-col"
+      >
+        {/* Screen Container - perfectly sized by the image ratio */}
+        <div className="relative rounded-[28px] overflow-hidden bg-white select-none z-10 w-full">
           
-          {/* WhatsApp Top Header Bar */}
-          <div className="bg-[#075e54] text-white pt-6 pb-2.5 px-3 flex items-center justify-between shadow-md shrink-0">
-            <div className="flex items-center space-x-2">
-              <div className="w-9 h-9 rounded-full bg-slate-200 flex items-center justify-center font-bold text-slate-800 border-2 border-emerald-400 text-sm overflow-hidden select-none">
-                {activeTestimonial.avatarUrl ? (
-                  <img 
-                    src={activeTestimonial.avatarUrl} 
-                    alt={activeTestimonial.name} 
-                    className="w-full h-full object-cover animate-fadeIn"
-                    referrerPolicy="no-referrer"
-                  />
-                ) : (
-                  <span className="text-xs">{activeTestimonial.name.split(' ').map(n => n[0]).join('')}</span>
-                )}
-              </div>
-              <div className="leading-tight">
-                <div className="font-bold text-xs max-w-[130px] truncate">{activeTestimonial.name}</div>
-                <div className="text-[10px] text-emerald-100 flex items-center">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 inline-block mr-1 animate-pulse"></span>
-                  online
-                </div>
-              </div>
-            </div>
-
-            <div className="flex items-center space-x-3 text-white/90">
-              <Video className="w-4 h-4 cursor-pointer hover:text-white" />
-              <Phone className="w-3.5 h-3.5 cursor-pointer hover:text-white" />
-              <MoreVertical className="w-4 h-4 cursor-pointer hover:text-white" />
-            </div>
+          {/* Autoplay Progress Bar */}
+          <div className="absolute top-0 left-0 right-0 h-1 bg-slate-200/50 z-20 overflow-hidden">
+            <motion.div
+              key={activeIndex}
+              initial={{ width: '0%' }}
+              animate={{ width: '100%' }}
+              transition={{ duration: 8, ease: 'linear' }}
+              className="h-full bg-brand-orange"
+            />
           </div>
 
-          {/* Chat Background & Message Bubbles Area */}
-          <div className="flex-1 p-3 space-y-3 flex flex-col">
-            {/* System Info Banner */}
-            <div className="self-center bg-[#d1f4cc]/80 text-[10px] text-slate-700 font-medium px-3 py-1 rounded-md shadow-sm text-center max-w-[240px]">
-              🔒 As mensagens são protegidas por criptografia ponta a ponta.
-            </div>
+          {/* 
+            Sizer Image:
+            An invisible image with 'relative w-full h-auto' tells the browser 
+            exactly what aspect ratio the parent container must take. 
+            This dynamically eliminates ALL top/bottom blank space perfectly on any screen!
+          */}
+          <img
+            src={TESTIMONIAL_IMAGES[0]}
+            alt="Sizer"
+            className="w-full h-auto opacity-0 pointer-events-none select-none block"
+            referrerPolicy="no-referrer"
+          />
 
-            {/* Render Messages */}
-            {activeTestimonial.messages.map((msg, mIdx) => {
-              const isMe = msg.sender === 'me';
-              return (
-                <div
-                  key={mIdx}
-                  className={`max-w-[85%] rounded-lg px-3 py-1.5 text-xs shadow-sm leading-relaxed relative ${
-                    isMe
-                      ? 'self-end bg-[#dcf8c6] text-slate-800 rounded-tr-none'
-                      : 'self-start bg-white text-slate-800 rounded-tl-none'
-                  }`}
-                >
-                  <p>{msg.text}</p>
-                  <div className="text-[9px] text-slate-400 mt-1 flex justify-end items-center space-x-1">
-                    <span>{msg.time}</span>
-                    {isMe && <CheckCheck className="w-3 h-3 text-blue-500" />}
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-
-          {/* Fake Input Footer */}
-          <div className="bg-[#f0f0f0] p-2 flex items-center space-x-2 border-t border-slate-200 shrink-0">
-            <div className="flex-1 bg-white rounded-full px-3.5 py-1.5 text-[11px] text-slate-400 flex items-center justify-between shadow-sm">
-              <span>Responder como {activeTestimonial.name.split(' ')[0]}...</span>
-            </div>
-            <div className="w-8 h-8 rounded-full bg-[#075e54] text-white flex items-center justify-center shadow-sm">
-              <Send className="w-3.5 h-3.5 fill-current ml-0.5" />
-            </div>
+          {/* Sliding images container - absolute-positioned inside the sized parent */}
+          <div className="absolute inset-0 overflow-hidden">
+            <AnimatePresence initial={false}>
+              <motion.div
+                key={activeIndex}
+                variants={slideVariants}
+                initial="enter"
+                animate="center"
+                exit="exit"
+                transition={{
+                  x: { type: 'tween', duration: 0.4, ease: 'easeInOut' },
+                  opacity: { duration: 0.4 }
+                }}
+                className="absolute inset-0 w-full h-full"
+              >
+                <img
+                  src={TESTIMONIAL_IMAGES[activeIndex]}
+                  alt={`Depoimento real ${activeIndex + 1}`}
+                  className="w-full h-full object-cover select-none pointer-events-none"
+                  referrerPolicy="no-referrer"
+                />
+              </motion.div>
+            </AnimatePresence>
           </div>
         </div>
       </div>
 
-      {/* Navigation Arrows for slide control */}
-      <div className="flex items-center justify-between mt-4 max-w-[240px] mx-auto">
-        <button
-          onClick={prevTestimonial}
-          className="p-2 rounded-full bg-white hover:bg-slate-50 border border-slate-200 text-slate-700 hover:text-orange-500 transition-colors shadow-sm cursor-pointer"
-          aria-label="Depoimento Anterior"
-        >
-          <ChevronLeft className="w-5 h-5" />
-        </button>
-        <span className="text-xs text-slate-500 font-bold">
-          {activeIndex + 1} de {testimonials.length} depoimentos
-        </span>
-        <button
-          onClick={nextTestimonial}
-          className="p-2 rounded-full bg-white hover:bg-slate-50 border border-slate-200 text-slate-700 hover:text-orange-500 transition-colors shadow-sm cursor-pointer"
-          aria-label="Próximo Depoimento"
-        >
-          <ChevronRight className="w-5 h-5" />
-        </button>
-      </div>
+      {/* Navigation Controls and Indicators */}
+      <div className="flex flex-col items-center gap-4 mt-6 w-full max-w-[320px]">
+        {/* Navigation buttons + Index indicator */}
+        <div className="flex items-center justify-between w-full">
+          <button
+            onClick={handlePrev}
+            className="p-3 rounded-full bg-white hover:bg-slate-50 border border-slate-200 text-slate-700 hover:text-brand-orange transition-all shadow-sm cursor-pointer active:scale-95"
+            aria-label="Depoimento Anterior"
+          >
+            <ChevronLeft className="w-5 h-5" />
+          </button>
 
-      {/* Description caption */}
-      <p className="text-center text-xs text-slate-400 italic mt-3">
-        *Depoimentos de clientes satisfeitos que transformaram suas aulas com nosso kit.
-      </p>
+          {/* Dots Indicator */}
+          <div className="flex items-center gap-1.5">
+            {TESTIMONIAL_IMAGES.map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => {
+                  setActiveIndex(idx);
+                }}
+                className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
+                  activeIndex === idx ? 'w-5 bg-brand-orange' : 'w-2 bg-slate-300 hover:bg-slate-400'
+                }`}
+                aria-label={`Ir para depoimento ${idx + 1}`}
+              />
+            ))}
+          </div>
+
+          <button
+            onClick={handleNext}
+            className="p-3 rounded-full bg-white hover:bg-slate-50 border border-slate-200 text-slate-700 hover:text-brand-orange transition-all shadow-sm cursor-pointer active:scale-95"
+            aria-label="Próximo Depoimento"
+          >
+            <ChevronRight className="w-5 h-5" />
+          </button>
+        </div>
+      </div>
     </div>
   );
 }
