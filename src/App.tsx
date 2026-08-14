@@ -284,7 +284,20 @@ export default function App() {
                           ,{plan.currentPrice.toFixed(2).split('.')[1]}
                         </span>
                       </div>
-                      <span className="text-xs text-slate-400 font-bold mt-1 block">Pagamento Único • Acesso Vitalício</span>
+
+                      {/* Savings Badge */}
+                      <div className={`mt-2.5 px-3.5 py-1 rounded-full text-center border ${
+                        isPremium 
+                          ? 'bg-emerald-50 border-emerald-200 text-emerald-700 font-black animate-pulse' 
+                          : 'bg-slate-50 border-slate-200 text-slate-600 font-bold'
+                      }`}>
+                        <p className="text-[10px] font-display uppercase tracking-wide flex items-center justify-center gap-1">
+                          {isPremium && <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping shrink-0"></span>}
+                          <span>VOCÊ ECONOMIZA R$ {(plan.originalPrice - plan.currentPrice).toFixed(2).replace('.', ',')} HOJE!</span>
+                        </p>
+                      </div>
+
+                      <span className="text-xs text-slate-400 font-bold mt-2.5 block">Pagamento Único • Acesso Vitalício</span>
                       <span className="text-[10px] text-brand-orange font-display font-black uppercase tracking-wider block mt-2">✓ Sem mensalidades ou surpresas</span>
                     </div>
 

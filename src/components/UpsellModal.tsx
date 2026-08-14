@@ -44,7 +44,7 @@ export default function UpsellModal({ isOpen, onClose, onAccept, onDecline }: Up
         {/* Top Scarcity Bar */}
         <div className="bg-brand-orange text-white py-2 px-4 text-center font-display font-black text-xs uppercase tracking-wider flex items-center justify-center space-x-2">
           <Flame className="w-3.5 h-3.5 text-white animate-pulse shrink-0" />
-          <span>OFERTA ÚNICA: ADICIONE PREMIUM E ECONOMIZE R$ 132,00</span>
+          <span>OFERTA ÚNICA: ADICIONE PREMIUM E ECONOMIZE R$ 177,10</span>
         </div>
 
         {/* Close button */}
@@ -63,26 +63,28 @@ export default function UpsellModal({ isOpen, onClose, onAccept, onDecline }: Up
           {/* Header */}
           <div className="text-center mb-4">
             <h3 className="text-xl sm:text-2xl font-display font-black text-navy tracking-tight uppercase leading-tight">
-              Aproveite a <span className="text-brand-orange">Oferta Completa</span> por apenas mais R$ 5,00!
+              Aproveite a <span className="text-brand-orange">Oferta Completa</span> por apenas mais R$ 10,00!
             </h3>
             <p className="text-slate-500 text-xs mt-1.5 font-medium">
-              Por apenas uma diferença de R$ 5,00 você garante todo o material didático e todos os bônus abaixo.
+              Por apenas uma diferença de R$ 10,00 você garante todo o material didático e todos os bônus abaixo.
             </p>
           </div>
 
           {/* Price & Savings Highlight */}
-          <div className="bg-slate-50 rounded-xl p-3 border border-slate-100 flex items-center justify-between gap-3 mb-4">
-            <div className="text-left">
-              <span className="text-[10px] text-slate-400 font-bold uppercase tracking-wider block">PREÇO PROMOCIONAL</span>
-              <div className="flex items-baseline space-x-1">
-                <span className="text-sm font-bold text-slate-500">Apenas</span>
-                <span className="text-2xl font-display font-black text-brand-orange">R$ 14,90</span>
-                <span className="text-[10px] font-bold text-slate-400">À VISTA</span>
-              </div>
+          <div className="bg-slate-50 rounded-2xl p-4 border border-slate-100 flex flex-col items-center justify-center text-center gap-2 mb-4 w-full">
+            <div className="text-slate-400 text-xs font-bold uppercase tracking-wider">
+              De <span className="line-through text-red-500">R$ 197,00</span> por apenas:
             </div>
-            <div className="bg-emerald-50 border border-emerald-100 px-2.5 py-1.5 rounded-lg text-right">
-              <span className="text-[10px] font-bold text-slate-400 block uppercase leading-none mb-0.5">VOCÊ ECONOMIZA</span>
-              <span className="text-xs font-black text-emerald-600 uppercase leading-none block">R$ 132,10 HOJE!</span>
+            <div className="flex items-baseline justify-center gap-1">
+              <span className="text-sm font-bold text-slate-500">Apenas</span>
+              <span className="text-3xl font-display font-black text-brand-orange leading-none">R$ 19,90</span>
+              <span className="text-[10px] font-bold text-slate-400">À VISTA</span>
+            </div>
+            <div className="bg-emerald-50 border border-emerald-100 px-3.5 py-1.5 rounded-full inline-flex items-center justify-center gap-1.5 mt-1 shadow-2xs">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse shrink-0"></span>
+              <span className="text-[10px] font-bold text-emerald-800 uppercase tracking-wide">
+                VOCÊ ECONOMIZA <strong className="font-black text-emerald-600">R$ 177,10 HOJE!</strong>
+              </span>
             </div>
           </div>
 
@@ -90,7 +92,7 @@ export default function UpsellModal({ isOpen, onClose, onAccept, onDecline }: Up
           <div className="mb-5 bg-orange-50/30 rounded-xl p-4 border border-orange-100">
             <h4 className="text-[11px] font-display font-black text-brand-orange uppercase tracking-wider mb-3 flex items-center gap-1.5">
               <Gift className="w-3.5 h-3.5 shrink-0" />
-              BENEFÍCIOS EXCLUSIVOS DO PLANO PREMIUM (R$ 14,90)
+              BENEFÍCIOS EXCLUSIVOS DO PLANO PREMIUM (R$ 19,90)
             </h4>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -153,7 +155,7 @@ export default function UpsellModal({ isOpen, onClose, onAccept, onDecline }: Up
               id="accept-upsell-btn"
             >
               <Sparkles className="w-4 h-4 text-amber-200 shrink-0" />
-              <span>SIM! ADICIONAR PREMIUM POR +R$ 5,00</span>
+              <span>SIM! ADICIONAR PREMIUM POR +R$ 10,00</span>
               <ArrowRight className="w-4 h-4 shrink-0 animate-bounce-horizontal" />
             </button>
 
