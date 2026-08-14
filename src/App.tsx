@@ -88,7 +88,7 @@ export default function App() {
           {/* Hero Mockup Image */}
           <div className="mb-10 flex justify-center px-4">
             <img 
-              src="https://res.cloudinary.com/dm2glkkcv/image/upload/v1786673353/ChatGPT_Image_13_de_ago._de_2026_23_08_29_kjzp4r.png" 
+              src="https://res.cloudinary.com/dm2glkkcv/image/upload/v1786673615/ChatGPT_Image_13_de_ago._de_2026_23_13_10_epkhed.png" 
               alt="Mockup do Acervo de Jiu-Jitsu Infantil"
               className="w-full max-w-xl md:max-w-3xl h-auto object-contain drop-shadow-2xl hover:scale-[1.02] transition-transform duration-500"
               referrerPolicy="no-referrer"
