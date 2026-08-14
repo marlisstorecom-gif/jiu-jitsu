@@ -162,7 +162,7 @@ export default function UpsellModal({ isOpen, onClose, onAccept, onDecline }: Up
             {/* DECLINE BUTTON */}
             <button
               onClick={onDecline}
-              className="w-full py-2.5 px-4 text-slate-400 hover:text-slate-600 font-semibold text-[10px] uppercase tracking-wide text-center cursor-pointer transition-colors"
+              className="w-full py-2.5 px-4 text-slate-500 hover:text-slate-700 hover:underline font-bold text-[11px] sm:text-xs uppercase tracking-wide text-center cursor-pointer transition-colors leading-relaxed"
               id="decline-upsell-btn"
             >
               Não obrigado, prefiro abrir mão de todos os 4 Bônus e ficar apenas com o Básico (R$ 9,90)
