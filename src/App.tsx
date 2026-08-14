@@ -14,7 +14,8 @@ import {
   MessageSquare,
   Sparkles,
   ExternalLink,
-  BookOpen
+  BookOpen,
+  Flame
 } from 'lucide-react';
 import { featuresList, benefitsTargets, pricingPlans } from './data/landingData';
 import UrgencyTimer from './components/UrgencyTimer';
@@ -87,7 +88,7 @@ export default function App() {
           {/* Hero Mockup Image */}
           <div className="mb-10 flex justify-center px-4">
             <img 
-              src="https://res.cloudinary.com/dm2glkkcv/image/upload/v1786159470/823c9bd3-9034-4bda-a5d3-ddb19fd9d502_dlbwea.png" 
+              src="https://res.cloudinary.com/dm2glkkcv/image/upload/v1786673353/ChatGPT_Image_13_de_ago._de_2026_23_08_29_kjzp4r.png" 
               alt="Mockup do Acervo de Jiu-Jitsu Infantil"
               className="w-full max-w-xl md:max-w-3xl h-auto object-contain drop-shadow-2xl hover:scale-[1.02] transition-transform duration-500"
               referrerPolicy="no-referrer"
@@ -343,13 +344,25 @@ export default function App() {
                       <span className="flex items-center"><ShieldCheck className="w-3 h-3 text-brand-orange mr-1" /> Satisfação Garantida</span>
                     </div>
 
-                    {/* WhatsApp Info */}
-                    <div className={`mt-4 rounded-xl p-3 text-center w-full max-w-sm ${isPremium ? 'bg-emerald-50 border border-emerald-100' : 'bg-slate-50 border border-slate-100'}`}>
-                      <p className={`text-[10px] font-display font-black uppercase tracking-wider flex items-center justify-center space-x-1.5 ${isPremium ? 'text-emerald-600' : 'text-slate-500'}`}>
-                        <span className={`w-2 h-2 rounded-full animate-pulse inline-block ${isPremium ? 'bg-emerald-500' : 'bg-slate-400'}`}></span>
-                        <span>RECEBA O MATERIAL DIRETO NO WHATSAPP</span>
-                      </p>
-                    </div>
+                    {/* Info / Advantage Notice */}
+                    {isPremium ? (
+                      <div className="mt-4 rounded-xl p-3 text-center w-full max-w-sm bg-emerald-50 border border-emerald-100">
+                        <p className="text-[10px] font-display font-black uppercase tracking-wider flex items-center justify-center space-x-1.5 text-emerald-600">
+                          <span className="w-2 h-2 rounded-full animate-pulse inline-block bg-emerald-500"></span>
+                          <span>RECEBA O MATERIAL DIRETO NO WHATSAPP</span>
+                        </p>
+                      </div>
+                    ) : (
+                      <div className="mt-4 rounded-xl p-3 text-center w-full max-w-sm bg-amber-50/90 border border-brand-orange/30">
+                        <p className="text-xs font-display font-black uppercase tracking-wide text-brand-orange flex items-center justify-center gap-1.5">
+                          <Flame className="w-3.5 h-3.5 text-brand-orange shrink-0" />
+                          <span>A OFERTA ABAIXO É MUITO MAIS VANTAJOSA!</span>
+                        </p>
+                        <p className="text-[11px] text-slate-600 font-medium mt-1 leading-snug">
+                          Garanta o <strong className="text-navy">Kit Completo com todos os 4 Bônus</strong> por apenas mais R$ 10,00.
+                        </p>
+                      </div>
+                    )}
                   </div>
 
                 </div>
